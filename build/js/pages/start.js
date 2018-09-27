@@ -29,30 +29,33 @@ $( window ).load( function()
                ( $oManufacturerSlider.width() < 900 ) ? 5 : 7;
     }
 
+    if ($( '#promo-carousel' ).length) {
+        $( '#promo-carousel' ).flexslider(
+            {
+                animation: "slide"
+            }
+        );
+    }
 
-    $( '#promo-carousel' ).flexslider(
-        {
-            animation: "slide"
-        }
-    );
+    if ($oManufacturerSlider.length) {
+        flexslider = $oManufacturerSlider.flexslider(
+            {
+                animation: "slide",
+                itemWidth: 100,
+                itemMargin: 10,
+                minItems: getGridSize(), // use function to pull in initial value
+                maxItems: getGridSize() // use function to pull in initial value
+            }
+        );
 
-    flexslider = $oManufacturerSlider.flexslider(
-        {
-            animation: "slide",
-            itemWidth: 100,
-            itemMargin: 10,
-            minItems: getGridSize(), // use function to pull in initial value
-            maxItems: getGridSize() // use function to pull in initial value
-        }
-    );
+        // check grid size on resize event
+        $window.resize( function()
+            {
+                var gridSize = getGridSize();
 
-    // check grid size on resize event
-    $window.resize( function()
-        {
-            var gridSize = getGridSize();
-
-            flexslider.data().flexslider.vars.minItems = gridSize;
-            flexslider.data().flexslider.vars.maxItems = gridSize;
-        }
-    );
+                flexslider.data().flexslider.vars.minItems = gridSize;
+                flexslider.data().flexslider.vars.maxItems = gridSize;
+            }
+        );
+    }
 } );
