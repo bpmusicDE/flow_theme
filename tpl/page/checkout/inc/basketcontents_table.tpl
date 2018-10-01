@@ -276,7 +276,7 @@
                         <input type="checkbox" name="checkAll" id="checkAll" title="[{oxmultilang ident="ALL"}]">
                     </td>
                     <td colspan="[{if $oView->isWrapping()}]6[{else}]5[{/if}]">
-                        <button name="removeAllBtn" class="btn btn-sm" id="basketRemoveAll" type="button">[{oxmultilang ident="ALL"}]</button>
+                        <button name="removeAllBtn" class="btn btn-default btn-sm" id="basketRemoveAll" type="button">[{oxmultilang ident="ALL"}]</button>
                         <button name="removeBtn" class="btn btn-sm btn-danger" id="basketRemove" type="submit">[{oxmultilang ident="REMOVE"}]</button>
                         <button name="updateBtn" class="btn btn-sm btn-warning" id="basketUpdate" type="submit">[{oxmultilang ident="UPDATE"}]</button>
                     </td>
